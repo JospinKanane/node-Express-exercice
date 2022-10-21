@@ -14,6 +14,6 @@ app.get('/visit', (req, res) => {
 });
 
 
-app.listen(3000, ()=>{
+app.listen(5522, ()=>{
     console.log('listening on port 5522');
 });
