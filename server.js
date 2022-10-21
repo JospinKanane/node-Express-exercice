@@ -1,22 +1,19 @@
 const express = require('express');
 const app = express();
+const indexRouter = require('./Routes/indexRouter');
+const contactRouter = require('./Routes/contactRouter');
+const visitRouter = require('./Routes/visitRouter');
 const pug = require('pug');
 
 
 app.set('view engine', 'pug');
 app.set('views','views');
 
-app.get('/', (req, res) => {
-    res.render('index')
-});
+app.use('/', indexRouter);
 
-app.get('/contact', (req, res) => {
-    res.render('contact')
-});
+app.use('/contact', contactRouter);
 
-app.get('/visit', (req, res) => {
-    res.render('visit')
-});
+app.use('/visit', visitRouter);
 
 app.listen(1111, () =>{
     console.log('listening on port 1111');
